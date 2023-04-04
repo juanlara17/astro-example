@@ -7,5 +7,9 @@ const { frontmatter } = Astro.props;
     <p>Publishe on: {frontmatter.pubDate.slice(0,10)}</p>
     <p>Descripcion: {frontmatter.description}</p>
     <img src={frontmatter.image.url} width="100" alt={frontmatter.image.alt}/>
+    <!-- List Tags -->
+    <div class="flex flex-wrap my-0 mx-auto gap-2">
+        {frontmatter.tags.map((tag) => ( <p class="capitalize m-1 border border-r-4 py-2 px-4 text-xl hover:bg-gray-300 "><a href={`/tags/${tag}`} class="hover:text-blue-800">{tag}</a></p>))}
+    </div>
     <slot />
 </Layout>

@@ -28,7 +28,7 @@ const { posts } = Astro.props;
 ---
 
 <Layout pageTitle={tag}>
-    <p>Post tagged with {tag}</p>
+    <p>Post tagged with <span class="capitalize">{tag}</span> </p>
     <ul>
         <!-- {filteredPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)} -->
         {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
